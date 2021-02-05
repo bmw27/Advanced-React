@@ -19,11 +19,11 @@ const Logo = styled.h1`
 
 const HeaderStyles = styled.header`
   .bar {
+    border-bottom: 10px solid var(--black, black);
     display: grid;
     grid-template-columns: auto 1fr;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 10px solid var(--black, black);
   }
 
   .sub-bar {
