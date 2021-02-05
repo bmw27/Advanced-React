@@ -17,9 +17,25 @@ const Logo = styled.h1`
   }
 `;
 
+const HeaderStyles = styled.header`
+  .bar {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 10px solid var(--black, black);
+  }
+
+  .sub-bar {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    border-bottom: 1px solid var(--black, black);
+  }
+`;
+
 export default function Header() {
   return (
-    <header>
+    <HeaderStyles>
       <div className="bar">
         <Logo>
           <Link href="/">Sick fits</Link>
@@ -31,6 +47,6 @@ export default function Header() {
       </div>
 
       <Nav />
-    </header>
+    </HeaderStyles>
   );
 }
