@@ -1,34 +1,21 @@
 import { list } from '@keystone-next/keystone/schema';
-import {
-  text,
-  password,
-  relationship,
-  select,
-  integer,
-} from '@keystone-next/fields';
+import { text } from '@keystone-next/fields';
+import { cloudinaryImage } from '@keystone-next/cloudinary';
 
-export const Product = list({
+export const cloudinary = {
+  cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+  apiKey: process.env.CLOUDINARY_KEY,
+  apiSecret: process.env.CLOUDINARY_SECRET,
+  folder: 'sickfits',
+};
+
+export const ProductImage = list({
   // access:
   fields: {
-    name: text({ isRequired: true }),
-    description: text({
-      ui: {
-        displayMode: 'textarea',
-      },
+    image: cloudinaryImage({
+      cloudinary,
+      label: 'Source',
     }),
-    status: select({
-      options: [
-        { label: 'Draft', value: 'DRAFT' },
-        { label: 'Available', value: 'AVAILABLE' },
-        { label: 'Unavailable', value: 'UNAVAILABLE' },
-      ],
-      defaultValue: 'DRAFT',
-      ui: {
-        displayMode: 'segmented-control',
-        createView: { fieldMode: 'hidden' },
-      },
-    }),
-    price: integer(),
-    // TODO: photo
+    altText: text(),
   },
 });

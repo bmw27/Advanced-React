@@ -1,11 +1,5 @@
 import { list } from '@keystone-next/keystone/schema';
-import {
-  text,
-  password,
-  relationship,
-  select,
-  integer,
-} from '@keystone-next/fields';
+import { text, select, integer } from '@keystone-next/fields';
 
 export const Product = list({
   // access:
