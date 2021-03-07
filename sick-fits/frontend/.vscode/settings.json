@@ -12,11 +12,13 @@
   "eslint.alwaysShowStatus": true,
   "peacock.color": "#FFC600",
   "prettier.disableLanguages": ["javascript", "javascriptreact"],
+  "search.exclude": {
+    "**/*.code-search": true,
+    "**/.next": true,
+    "**/bower_components": true,
+    "**/node_modules": true
+  },
   "workbench.colorCustomizations": {
-    "titleBar.activeForeground": "#15202b",
-    "titleBar.inactiveForeground": "#15202b99",
-    "titleBar.activeBackground": "#ffc600",
-    "titleBar.inactiveBackground": "#ffc60099",
     "activityBar.activeBackground": "#ffd133",
     "activityBar.activeBorder": "#009f7b",
     "activityBar.background": "#ffd133",
@@ -26,6 +28,10 @@
     "activityBarBadge.foreground": "#e7e7e7",
     "statusBar.background": "#ffc600",
     "statusBar.foreground": "#15202b",
-    "statusBarItem.hoverBackground": "#cc9e00"
+    "statusBarItem.hoverBackground": "#cc9e00",
+    "titleBar.activeBackground": "#ffc600",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#ffc60099",
+    "titleBar.inactiveForeground": "#15202b99"
   }
 }
