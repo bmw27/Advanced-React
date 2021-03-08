@@ -1,9 +1,10 @@
 import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 import styled from 'styled-components';
+import DisplayError from './ErrorMessage';
 import Product from './Product';
 
-const ALL_PRODUCTS_QUERY = gql`
+export const ALL_PRODUCTS_QUERY = gql`
   query ALL_PRODUCTS_QUERY {
     allProducts {
       id
@@ -34,7 +35,7 @@ export default function Products() {
   }
 
   if (error) {
-    return <p>Error: {error.message}</p>;
+    return <DisplayError error={error} />;
   }
 
   return (
