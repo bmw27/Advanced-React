@@ -7,14 +7,12 @@ export default function useForm(initial = {}) {
   function handleChange(e) {
     let { value, name, type, files } = e.target;
 
-    console.log(files);
-
     if (type === 'number') {
-      value = parseInt(value);
+      value = Number.isNaN(parseInt(value)) ? '' : parseInt(value);
     }
 
     if (type === 'file') {
-      value[0] = files;
+      [value] = files;
     }
 
     setInputs({
